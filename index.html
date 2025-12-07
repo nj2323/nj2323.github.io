@@ -114,5 +114,18 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+		<script>
+  // Keep smooth-scroll navigation but remove "#..." from the address bar
+  function removeHashFromUrl() {
+    history.replaceState(null, document.title, window.location.pathname + window.location.search);
+  }
+
+  // If someone lands with a hash (e.g., #page-top), clean it
+  if (window.location.hash) removeHashFromUrl();
+
+  // After clicking nav links, the hash changes—clean it again
+  window.addEventListener('hashchange', removeHashFromUrl);
+</script>
+
     </body>
 </html>
